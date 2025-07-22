@@ -1,0 +1,163 @@
+{
+  "project": "Turkcell Maya - Devir İşlemleri",
+  "testCases": [
+    {
+      "summary": "Devir Tipi Dropdown - Tüm Seçeneklerin Görüntülenmesi",
+      "testType": "Manual",
+      "priority": "High",
+      "labels": ["UI", "Dropdown", "DevirTipi"],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Maya uygulamasına giriş yap",
+          "data": "Geçerli kullanıcı bilgileri",
+          "expectedResult": "Başarıyla giriş yapılır"
+        },
+        {
+          "step": 2,
+          "action": "Devir işlemi sayfasına git",
+          "data": "Menu > Devir İşlem Tipi",
+          "expectedResult": "Devir Tipi sayfası açılır"
+        },
+        {
+          "step": 3,
+          "action": "Devir Tipi dropdown'ını tıkla",
+          "data": "Devir Tipi field",
+          "expectedResult": "Dropdown menü açılır ve tüm seçenekler görüntülenir"
+        },
+        {
+          "step": 4,
+          "action": "Dropdown seçeneklerini kontrol et",
+          "data": "Beklenen seçenekler listesi",
+          "expectedResult": "Aşağıdaki seçenekler görüntülenir:\n- Seçiniz\n- Şirket->Şirket\n- Şirket->Şahıs\n- Eskek Devir Şirket->Şahıs\n- Eskek Devir Şirket->Şirket\n- Eskek Toplu Devir Şirket->Şirket\n- Toplu Şirket->Şirket"
+        }
+      ]
+    },
+    {
+      "summary": "Devir Tipi Seçimi - Şirket->Şirket",
+      "testType": "Manual",
+      "priority": "Medium",
+      "labels": ["Functional", "DevirTipi", "SirketSirket"],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Devir Tipi dropdown'ını aç",
+          "data": "Devir Tipi field",
+          "expectedResult": "Dropdown menü açılır"
+        },
+        {
+          "step": 2,
+          "action": "'Şirket->Şirket' seçeneğini seç",
+          "data": "Şirket->Şirket option",
+          "expectedResult": "Seçenek seçilir ve dropdown kapanır"
+        },
+        {
+          "step": 3,
+          "action": "Seçilen değeri kontrol et",
+          "data": "Devir Tipi field value",
+          "expectedResult": "Field'da 'Şirket->Şirket' değeri görüntülenir"
+        }
+      ]
+    },
+    {
+      "summary": "Devir Tipi Seçimi - Şirket->Şahıs",
+      "testType": "Manual",
+      "priority": "Medium",
+      "labels": ["Functional", "DevirTipi", "SirketSahis"],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Devir Tipi dropdown'ını aç",
+          "data": "Devir Tipi field",
+          "expectedResult": "Dropdown menü açılır"
+        },
+        {
+          "step": 2,
+          "action": "'Şirket->Şahıs' seçeneğini seç",
+          "data": "Şirket->Şahıs option",
+          "expectedResult": "Seçenek seçilir ve dropdown kapanır"
+        },
+        {
+          "step": 3,
+          "action": "Seçilen değeri kontrol et",
+          "data": "Devir Tipi field value",
+          "expectedResult": "Field'da 'Şirket->Şahıs' değeri görüntülenir"
+        }
+      ]
+    },
+    {
+      "summary": "Devir Tipi Dropdown - Keyboard Navigation",
+      "testType": "Manual",
+      "priority": "Low",
+      "labels": ["Accessibility", "Keyboard", "DevirTipi"],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Devir Tipi field'ına Tab ile git",
+          "data": "Tab tuşu",
+          "expectedResult": "Field fokuslanır"
+        },
+        {
+          "step": 2,
+          "action": "Enter tuşuna bas",
+          "data": "Enter key",
+          "expectedResult": "Dropdown menü açılır"
+        },
+        {
+          "step": 3,
+          "action": "Arrow tuşları ile seçenekler arasında gezin",
+          "data": "Up/Down arrow keys",
+          "expectedResult": "Seçenekler arasında navigasyon çalışır"
+        },
+        {
+          "step": 4,
+          "action": "Enter ile seçim yap",
+          "data": "Enter key",
+          "expectedResult": "Seçenek seçilir ve dropdown kapanır"
+        }
+      ]
+    },
+    {
+      "summary": "Devir Tipi Dropdown - Negative Test (Boş Seçim)",
+      "testType": "Manual",
+      "priority": "Medium",
+      "labels": ["Negative", "Validation", "DevirTipi"],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Devir Tipi dropdown'ını aç",
+          "data": "Devir Tipi field",
+          "expectedResult": "Dropdown menü açılır"
+        },
+        {
+          "step": 2,
+          "action": "'Seçiniz' default değerini bırak",
+          "data": "Default 'Seçiniz' option",
+          "expectedResult": "Varsayılan değer seçili kalır"
+        },
+        {
+          "step": 3,
+          "action": "Form submit işlemi yap",
+          "data": "Submit button",
+          "expectedResult": "Validation hatası gösterilir: 'Lütfen devir tipini seçiniz'"
+        }
+      ]
+    }
+  ],
+  "testExecution": {
+    "environment": "Production",
+    "browser": "Chrome 137.0",
+    "device": "Desktop",
+    "testData": {
+      "validUserCredentials": "test_user@turkcell.com.tr",
+      "devir_types": [
+        "Şirket->Şirket",
+        "Şirket->Şahıs", 
+        "Eskek Devir Şirket->Şahıs",
+        "Eskek Devir Şirket->Şirket",
+        "Eskek Toplu Devir Şirket->Şirket",
+        "Toplu Şirket->Şirket"
+      ]
+    }
+  }
+} 
