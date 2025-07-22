@@ -1,4 +1,12 @@
 {
+  "buildCommand": "chmod +x node_modules/.bin/* && npx react-scripts build",
+  "outputDirectory": "build",
+  "installCommand": "npm ci",
+  "devCommand": "npm start",
+  "env": {
+    "NODE_VERSION": "20",
+    "NPM_CONFIG_CACHE": "/tmp/.npm"
+  },
   "rewrites": [
     {
       "source": "/(.*)",

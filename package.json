@@ -10,7 +10,6 @@
     "@testing-library/user-event": "^14.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
     "react-dropzone": "^14.2.3",
     "lucide-react": "^0.263.1",
     "uuid": "^9.0.1",
@@ -18,9 +17,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run build:production",
+    "build:production": "npx react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "vercel-build": "npx react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -43,9 +44,10 @@
   "devDependencies": {
     "tailwindcss": "^3.3.3",
     "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.24"
+    "postcss": "^8.4.24",
+    "react-scripts": "5.0.1"
   },
   "engines": {
-    "node": "20.x"
+    "node": ">=18.0.0"
   }
 } 
