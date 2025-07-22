@@ -1,0 +1,66 @@
+Test Case ID,Summary,Priority,Test Type,Component,Labels,Preconditions,Test Steps,Expected Results,Test Data
+TC_DT_001,"Devir Tipi Dropdown - Tüm Seçeneklerin Görüntülenmesi",High,Manual,Dropdown,"UI,Dropdown,DevirTipi","Maya uygulamasına giriş yapılmış, Devir işlemi sayfasında bulunuluyor","1. Devir Tipi dropdown'ına tıkla
+2. Dropdown seçeneklerini kontrol et","1. Dropdown menü açılır
+2. Şu seçenekler görüntülenir: Seçiniz, Şirket->Şirket, Şirket->Şahıs, Eskek Devir Şirket->Şahıs, Eskek Devir Şirket->Şirket, Eskek Toplu Devir Şirket->Şirket, Toplu Şirket->Şirket","Geçerli kullanıcı hesabı"
+
+TC_DT_002,"Devir Tipi Seçimi - Şirket->Şirket",Medium,Manual,Dropdown,"Functional,DevirTipi,SirketSirket","Maya uygulamasına giriş yapılmış, Devir işlemi sayfasında bulunuluyor","1. Devir Tipi dropdown'ını aç
+2. 'Şirket->Şirket' seçeneğini seç
+3. Seçilen değeri kontrol et","1. Dropdown menü açılır
+2. Seçenek seçilir ve dropdown kapanır
+3. Field'da 'Şirket->Şirket' değeri görüntülenir","Şirket->Şirket seçeneği"
+
+TC_DT_003,"Devir Tipi Seçimi - Şirket->Şahıs",Medium,Manual,Dropdown,"Functional,DevirTipi,SirketSahis","Maya uygulamasına giriş yapılmış, Devir işlemi sayfasında bulunuluyor","1. Devir Tipi dropdown'ını aç
+2. 'Şirket->Şahıs' seçeneğini seç
+3. Seçilen değeri kontrol et","1. Dropdown menü açılır
+2. Seçenek seçilir ve dropdown kapanır
+3. Field'da 'Şirket->Şahıs' değeri görüntülenir","Şirket->Şahıs seçeneği"
+
+TC_DT_004,"Devir Tipi Seçimi - Eskek Devir Şirket->Şahıs",Medium,Manual,Dropdown,"Functional,DevirTipi,EskekDevir","Maya uygulamasına giriş yapılmış, Devir işlemi sayfasında bulunuluyor","1. Devir Tipi dropdown'ını aç
+2. 'Eskek Devir Şirket->Şahıs' seçeneğini seç
+3. Seçilen değeri kontrol et","1. Dropdown menü açılır
+2. Seçenek seçilir ve dropdown kapanır
+3. Field'da 'Eskek Devir Şirket->Şahıs' değeri görüntülenir","Eskek Devir seçeneği"
+
+TC_DT_005,"Devir Tipi Seçimi - Eskek Devir Şirket->Şirket",Medium,Manual,Dropdown,"Functional,DevirTipi,EskekDevir","Maya uygulamasına giriş yapılmış, Devir işlemi sayfasında bulunuluyor","1. Devir Tipi dropdown'ını aç
+2. 'Eskek Devir Şirket->Şirket' seçeneğini seç
+3. Seçilen değeri kontrol et","1. Dropdown menü açılır
+2. Seçenek seçilir ve dropdown kapanır
+3. Field'da 'Eskek Devir Şirket->Şirket' değeri görüntülenir","Eskek Devir seçeneği"
+
+TC_DT_006,"Devir Tipi Seçimi - Eskek Toplu Devir Şirket->Şirket",Medium,Manual,Dropdown,"Functional,DevirTipi,TopluDevir","Maya uygulamasına giriş yapılmış, Devir işlemi sayfasında bulunuluyor","1. Devir Tipi dropdown'ını aç
+2. 'Eskek Toplu Devir Şirket->Şirket' seçeneğini seç
+3. Seçilen değeri kontrol et","1. Dropdown menü açılır
+2. Seçenek seçilir ve dropdown kapanır
+3. Field'da 'Eskek Toplu Devir Şirket->Şirket' değeri görüntülenir","Toplu Devir seçeneği"
+
+TC_DT_007,"Devir Tipi Seçimi - Toplu Şirket->Şirket",Medium,Manual,Dropdown,"Functional,DevirTipi,TopluDevir","Maya uygulamasına giriş yapılmış, Devir işlemi sayfasında bulunuluyor","1. Devir Tipi dropdown'ını aç
+2. 'Toplu Şirket->Şirket' seçeneğini seç
+3. Seçilen değeri kontrol et","1. Dropdown menü açılır
+2. Seçenek seçilir ve dropdown kapanır
+3. Field'da 'Toplu Şirket->Şirket' değeri görüntülenir","Toplu Devir seçeneği"
+
+TC_DT_008,"Devir Tipi Dropdown - Keyboard Navigation",Low,Manual,Accessibility,"Accessibility,Keyboard,DevirTipi","Maya uygulamasına giriş yapılmış, Devir işlemi sayfasında bulunuluyor","1. Tab tuşu ile Devir Tipi field'ına git
+2. Enter tuşuna bas
+3. Arrow tuşları ile seçenekler arasında gezin
+4. Enter ile seçim yap","1. Field fokuslanır
+2. Dropdown menü açılır
+3. Seçenekler arasında navigasyon çalışır
+4. Seçenek seçilir ve dropdown kapanır","Keyboard navigasyon"
+
+TC_DT_009,"Devir Tipi Dropdown - Negative Test (Boş Seçim)",Medium,Manual,Validation,"Negative,Validation,DevirTipi","Maya uygulamasına giriş yapılmış, Devir işlemi sayfasında bulunuluyor","1. Devir Tipi dropdown'ını aç
+2. 'Seçiniz' default değerini bırak
+3. Form submit işlemi yap","1. Dropdown menü açılır
+2. Varsayılan değer seçili kalır
+3. Validation hatası gösterilir: 'Lütfen devir tipini seçiniz'","Boş form data"
+
+TC_DT_010,"Devir Tipi Dropdown - Dış Tıklama ile Kapanma",Low,Manual,UI,"UI,EdgeCase,DevirTipi","Maya uygulamasına giriş yapılmış, Devir işlemi sayfasında bulunuluyor","1. Devir Tipi dropdown'ını aç
+2. Dropdown dışındaki bir alana tıkla
+3. Dropdown durumunu kontrol et","1. Dropdown menü açılır
+2. Dropdown kapanır
+3. Önceki seçili değer korunur","Click outside test"
+
+TC_DT_011,"Devir Tipi Dropdown - Performans Testi",Low,Manual,Performance,"Performance,DevirTipi","Maya uygulamasına giriş yapılmış, Devir işlemi sayfasında bulunuluyor","1. Devir Tipi dropdown'ına tıkla
+2. Açılma süresini ölç
+3. Seçeneklerin yüklenme durumunu kontrol et","1. Dropdown 2 saniye içinde açılır
+2. Tüm seçenekler yüklenir
+3. Performans kriterlerini karşılar","Performance metrics" 
