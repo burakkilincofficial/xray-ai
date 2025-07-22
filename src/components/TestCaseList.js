@@ -3,17 +3,13 @@ import {
   ChevronDown, 
   ChevronRight, 
   Clock, 
-  Tag, 
-  User,
-  Filter,
+  Tag,
   Search,
-  Eye,
-  CheckSquare
+  Eye
 } from 'lucide-react';
 
 const TestCaseList = ({ testCases }) => {
   const [expandedTestCase, setExpandedTestCase] = useState(null);
-  const [filter, setFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedPriority, setSelectedPriority] = useState('all');
 

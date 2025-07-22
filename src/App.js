@@ -1,15 +1,11 @@
 import React, { useState, useCallback } from 'react';
-import { useDropzone } from 'react-dropzone';
 import { 
   Upload, 
   FileText, 
   Download, 
   Zap, 
-  CheckCircle, 
-  AlertCircle,
-  Eye,
-  Code,
-  FileSpreadsheet
+  CheckCircle,
+  Eye
 } from 'lucide-react';
 import TestCaseGenerator from './components/TestCaseGenerator';
 import FileUpload from './components/FileUpload';
