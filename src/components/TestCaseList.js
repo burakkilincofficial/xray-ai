@@ -53,6 +53,29 @@ const TestCaseList = ({ testCases }) => {
     }
   };
 
+  const getAutomationPotentialColor = (potential) => {
+    switch (potential) {
+      case 'Yüksek': return 'text-green-600 bg-green-100';
+      case 'Orta': return 'text-orange-600 bg-orange-100';
+      case 'Düşük': return 'text-red-600 bg-red-100';
+      default: return 'text-gray-600 bg-gray-100';
+    }
+  };
+
+  const getLabelColor = (label) => {
+    const labelColors = {
+      'functional': 'bg-blue-100 text-blue-800',
+      'ui': 'bg-purple-100 text-purple-800',
+      'validation': 'bg-orange-100 text-orange-800',
+      'accessibility': 'bg-green-100 text-green-800',
+      'security': 'bg-red-100 text-red-800',
+      'performance': 'bg-yellow-100 text-yellow-800',
+      'negative': 'bg-gray-100 text-gray-800',
+      'positive': 'bg-emerald-100 text-emerald-800'
+    };
+    return labelColors[label] || 'bg-gray-100 text-gray-800';
+  };
+
   const priorityStats = {
     high: testCases.filter(tc => tc.priority === 'High').length,
     medium: testCases.filter(tc => tc.priority === 'Medium').length,
@@ -184,13 +207,23 @@ const TestCaseList = ({ testCases }) => {
                       {testCase.labels.map((label, index) => (
                         <span
                           key={index}
-                          className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
+                          className={`px-2 py-1 text-xs rounded-full ${getLabelColor(label)}`}
                         >
                           {label}
                         </span>
                       ))}
                     </div>
                   </div>
+
+                  {/* Automation Potential */}
+                  {testCase.automationPotential && (
+                    <div>
+                      <h5 className="font-medium text-gray-900 mb-2">🤖 Otomasyon Potansiyeli</h5>
+                      <span className={`px-3 py-1 text-sm rounded-full ${getAutomationPotentialColor(testCase.automationPotential)}`}>
+                        {testCase.automationPotential}
+                      </span>
+                    </div>
+                  )}
 
                   {/* Preconditions */}
                   {testCase.preconditions && testCase.preconditions.length > 0 && (
@@ -228,10 +261,56 @@ const TestCaseList = ({ testCases }) => {
                   {testCase.testData && Object.keys(testCase.testData).length > 0 && (
                     <div>
                       <h5 className="font-medium text-gray-900 mb-2">📊 Test Verileri</h5>
-                      <div className="bg-gray-50 rounded-lg p-3">
-                        <pre className="text-sm text-gray-700 whitespace-pre-wrap">
-                          {JSON.stringify(testCase.testData, null, 2)}
-                        </pre>
+                      <div className="space-y-3">
+                        {testCase.testData.validInputs && Object.keys(testCase.testData.validInputs).length > 0 && (
+                          <div>
+                            <h6 className="text-sm font-medium text-green-700 mb-1">✅ Geçerli Veriler</h6>
+                            <div className="bg-green-50 rounded p-2">
+                              {Object.entries(testCase.testData.validInputs).map(([key, value]) => (
+                                <div key={key} className="text-sm">
+                                  <span className="font-medium">{key}:</span> {value}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        
+                        {testCase.testData.invalidInputs && Object.keys(testCase.testData.invalidInputs).length > 0 && (
+                          <div>
+                            <h6 className="text-sm font-medium text-red-700 mb-1">❌ Geçersiz Veriler</h6>
+                            <div className="bg-red-50 rounded p-2">
+                              {Object.entries(testCase.testData.invalidInputs).map(([key, value]) => (
+                                <div key={key} className="text-sm">
+                                  <span className="font-medium">{key}:</span> {value}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        
+                        {testCase.testData.edgeCases && testCase.testData.edgeCases.length > 0 && (
+                          <div>
+                            <h6 className="text-sm font-medium text-orange-700 mb-1">⚠️ Edge Case'ler</h6>
+                            <div className="bg-orange-50 rounded p-2">
+                              <ul className="text-sm space-y-1">
+                                {testCase.testData.edgeCases.map((edgeCase, index) => (
+                                  <li key={index}>• {edgeCase}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        )}
+                        
+                        {testCase.testData.specialCharacters && testCase.testData.specialCharacters.length > 0 && (
+                          <div>
+                            <h6 className="text-sm font-medium text-purple-700 mb-1">🔤 Özel Karakterler</h6>
+                            <div className="bg-purple-50 rounded p-2">
+                              <div className="text-sm">
+                                {testCase.testData.specialCharacters.join(', ')}
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   )}

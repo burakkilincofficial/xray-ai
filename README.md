@@ -6,7 +6,8 @@ Ekran görüntüsünden otomatik test case oluşturucu React uygulaması. Kullan
 
 ### 🎯 Ana Özellikler
 - **Drag & Drop File Upload** - Ekran görüntülerini sürükleyip bırakma
-- **AI-Powered Analysis** - Açıklama bazlı test case üretimi
+- **🤖 AI-Powered Analysis** - OpenAI GPT-4 Vision ile görsel analiz
+- **🧠 Smart Test Generation** - Akıllı test case üretimi ve öneriler
 - **Multiple Export Formats** - JSON, CSV, Gherkin formatları
 - **Real-time Preview** - Anlık görüntü önizleme
 - **Smart Filtering** - Test case arama ve filtreleme
@@ -38,7 +39,16 @@ Ekran görüntüsünden otomatik test case oluşturucu React uygulaması. Kullan
 npm install
 ```
 
-### Adım 2: Uygulamayı Başlat
+### Adım 2: AI Özelliklerini Aktifleştir (Opsiyonel)
+AI özelliklerini kullanmak için OpenAI API key'inizi ayarlayın:
+
+1. `env.example` dosyasını `.env` olarak kopyalayın
+2. OpenAI API key'inizi ekleyin:
+```bash
+REACT_APP_OPENAI_API_KEY=your_actual_api_key_here
+```
+
+### Adım 3: Uygulamayı Başlat
 ```bash
 npm start
 ```
@@ -58,9 +68,10 @@ Uygulama [http://localhost:3000](http://localhost:3000) adresinde açılacaktır
 - Beklentilerinizi net şekilde belirtin
 
 ### 3. Test Case'leri Oluştur
-- "AI ile Test Case Oluştur" butonuna tıklayın
-- Sistem otomatik olarak test case'leri üretecektir
-- Sonuçları önizleyebilirsiniz
+- AI özelliği aktifse "AI ile Test Case Oluştur" butonuna tıklayın
+- AI görsel analiz yaparak akıllı test case'ler üretecektir
+- AI analiz panelinde tespit edilen bileşenleri ve önerileri görebilirsiniz
+- AI kullanmıyorsanız standart test case üretimi yapılır
 
 ### 4. Export Edin
 - JSON formatında X-ray import için
@@ -115,10 +126,22 @@ Feature: Generated Test Scenarios
     Then Tüm seçenekler görüntülenir
 ```
 
-## 🧠 AI Logic
+## 🤖 AI Özellikleri
+
+### OpenAI GPT-4 Vision Entegrasyonu
+- **Görsel Analiz**: Ekran görüntülerini analiz ederek UI bileşenlerini otomatik tespit
+- **Akıllı Test Üretimi**: Görsel içerik ve açıklamaya göre kapsamlı test case'ler
+- **Bileşen Tespiti**: Butonlar, formlar, dropdown'lar, tablolar otomatik tespit
+- **Akıllı Öneriler**: Test stratejisi, risk analizi, otomasyon fırsatları
+
+### AI Özellikleri
+- **Görsel Anlama**: GPT-4 Vision ile ekran görüntüsü analizi
+- **Doğal Dil İşleme**: Türkçe açıklamaları anlama ve işleme
+- **Akıllı Kategorizasyon**: Test case'leri otomatik kategorilendirme
+- **Kalite Değerlendirmesi**: Test case kalitesini AI ile değerlendirme
 
 ### Component Detection
-Uygulama açıklamadaki anahtar kelimeleri analiz ederek UI componentlerini tespit eder:
+AI hem görsel analiz hem de açıklamadaki anahtar kelimeleri analiz ederek UI componentlerini tespit eder:
 
 - **Dropdown**: açılır, dropdown, seçim, liste
 - **Button**: buton, button, tıkla
@@ -193,8 +216,16 @@ Uygulama Tailwind CSS kullanmaktadır:
 
 ### Environment Variables
 ```bash
-REACT_APP_API_URL=your_api_url
-REACT_APP_VERSION=1.0.0
+# OpenAI API Configuration
+REACT_APP_OPENAI_API_KEY=your_openai_api_key_here
+
+# AI Service Configuration
+REACT_APP_AI_ENABLED=true
+REACT_APP_AI_MODEL=gpt-4-vision-preview
+
+# Application Configuration
+REACT_APP_APP_NAME=X-ray Test Case Generator
+REACT_APP_APP_VERSION=1.0.0
 ```
 
 ### Tailwind Customization
