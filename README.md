@@ -224,7 +224,7 @@ REACT_APP_AI_ENABLED=true
 REACT_APP_AI_MODEL=gpt-4-vision-preview
 
 # Application Configuration
-REACT_APP_APP_NAME=X-ray Test Case Generator
+REACT_APP_APP_NAME=Test Royer Case Generator
 REACT_APP_APP_VERSION=1.0.0
 ```
 
@@ -264,4 +264,4 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 
 ---
 
-🚀 **Happy Testing!** X-ray Test Case Generator ile test case'lerinizi otomatik oluşturun! 
+🚀 **Happy Testing!** Test Royer Test Case Generator ile test case'lerinizi otomatik oluşturun! 
