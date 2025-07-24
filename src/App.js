@@ -454,11 +454,11 @@ function App() {
             <span>×</span>
             <div className="flex items-center space-x-1">
               <Zap className="h-4 w-4 text-xray-blue" />
-              <span>X-ray</span>
+              <span>Test Royer</span>
             </div>
           </div>
           <p>
-            🚀 X-ray Test Case Generator v1.0 | 
+            🚀 Test Royer Test Case Generator v1.0 | 
             Ekran görüntülerinden otomatik test case üretimi
           </p>
           <p className="text-xs mt-1 text-gray-400">
