@@ -117,7 +117,7 @@ function App() {
               
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">
-                  X-ray Test Case Generator
+                  Test Royer Test Case Generator
                 </h1>
                 <p className="text-sm text-gray-600">
                   Ekran görüntüsünden otomatik test case oluşturucu

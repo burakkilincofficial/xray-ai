@@ -1,4 +1,4 @@
-# 🚀 X-ray Test Case Generator
+# 🚀 Test Royer Test Case Generator
 
 Ekran görüntüsünden otomatik test case oluşturucu React uygulaması. Kullanıcılar UI ekran görüntülerini yükleyip açıklama yazarak X-ray Test Management ile uyumlu test case'leri otomatik olarak oluşturabilir.
 

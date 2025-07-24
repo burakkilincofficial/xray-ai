@@ -1,7 +1,7 @@
 {
   "name": "xray-test-case-generator",
   "version": "1.0.0",
-  "description": "X-ray Test Case Generator - Ekran görüntüsünden otomatik test case oluşturucu",
+  "description": "Test Royer Test Case Generator - Ekran görüntüsünden otomatik test case oluşturucu",
   "homepage": ".",
   "private": true,
   "dependencies": {
